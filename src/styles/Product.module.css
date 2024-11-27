@@ -1,9 +1,10 @@
-/* src/styles/Product.module.css */
 .productList {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 40px; 
     padding: 20px;
+    margin: 10px;
+    justify-content: center; 
   }
   
   .card {
@@ -13,6 +14,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.2s ease-in-out;
+    width: 200px; 
   }
   
   .card:hover {
