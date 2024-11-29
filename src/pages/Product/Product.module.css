@@ -5,5 +5,7 @@
     padding: 20px;
     margin: 40px 10px;
     justify-content: center; 
+    background: linear-gradient(135deg, #2c3e50, #34495e, #8e44ad);
+    border-radius: 10px;
   }
   

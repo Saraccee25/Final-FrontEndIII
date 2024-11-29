@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./CharacterCard.module.css";
 
-const CharacterCard = ({ name, image, status, species }) => (
+const CharacterCard = ({ name, image, status, species, gender }) => (
   <div className={styles.card}>
     <div className={styles.imageContainer}>
       <img src={image} alt={name} className={styles.cardImage} />
@@ -12,9 +12,11 @@ const CharacterCard = ({ name, image, status, species }) => (
     </div>
     <div className={styles.cardContent}>
       <h3 className={styles.name}>{name}</h3>
-      <p className={styles.species}>{species}</p>
+      <p className={styles.gender}>Gender: {gender}</p> 
+      <p className={styles.species}>Species: {species}</p> 
     </div>
   </div>
 );
+
 
 export default CharacterCard;

@@ -87,12 +87,13 @@
   font-family: "Poppins", sans-serif; 
 }
 
-.species {
+.species, .gender {
   color: #a0e6ff;
   font-size: 1rem;
-  margin: 0;
-  font-family: "Poppins", sans-serif; 
+  margin: 5px 0;
+  font-family: "Poppins", sans-serif;
 }
+
 
 @media (max-width: 768px) {
   .card {
