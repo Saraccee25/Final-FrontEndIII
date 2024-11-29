@@ -30,13 +30,9 @@ const Product = () => {
     <div className={styles.productList}>
       {products.map((product) => (
         <CharacterCard 
-        key={product.id} 
-        name={product.name} 
-        image={product.image} 
-        status={product.status} 
-        species={product.species} 
-        gender={product.gender}   
-      />
+          key={product.id} 
+          character={product} 
+        />
       ))}
     </div>
   );

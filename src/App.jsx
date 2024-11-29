@@ -1,11 +1,14 @@
-import { BrowserRouter as Router } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
-import AppRoutes from './routes/AppRoutes';
+import { BrowserRouter as Router } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import AppRoutes from "./routes/AppRoutes";
+import FavoritesProvider from "./context/FavoritesContext"; 
 
 const App = () => (
   <Router>
-    <Navbar />
-    <AppRoutes />
+    <FavoritesProvider>
+      <Navbar />
+      <AppRoutes />
+    </FavoritesProvider>
   </Router>
 );
 

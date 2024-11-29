@@ -18,6 +18,9 @@ const Navbar = () => {
         <Link to="/product" className={styles.link} onClick={() => setIsOpen(false)}>
           Product
         </Link>
+        <Link to="/favorites" className={styles.link} onClick={() => setIsOpen(false)}>
+          Favorites 
+        </Link>
       </div>
       <div className={styles.hamburger} onClick={() => setIsOpen(!isOpen)}>
         <span></span>
