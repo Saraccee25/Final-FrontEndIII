@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { getAllCharacters } from "../api/rickAndMortyApi";
-import CharacterCard from "../components/CharacterCard"; // Importamos CharacterCard
-import styles from "../styles/Product.module.css";
+import { getAllCharacters } from "../../service/rickAndMortyApi";
+import CharacterCard from "../../components/CharacterCard/CharacterCard"; 
+import styles from "./Product.module.css";
 
 const Product = () => {
   const [products, setProducts] = useState([]);

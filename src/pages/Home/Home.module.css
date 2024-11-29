@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: #fff;
+    min-height: 100vh;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif; /* Fuente redonda y moderna */
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #00b0c8;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 176, 200, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+    font-family: "Quicksand", sans-serif; /* Fuente amigable para títulos */
+}
+
+.description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0 auto 30px;
+    max-width: 600px;
+    color: #a0e6ff;
+    font-family: "Poppins", sans-serif; /* Fuente consistente con el contenedor */
+}
