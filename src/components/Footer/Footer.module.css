@@ -1,0 +1,103 @@
+.footer {
+    background: rgba(26, 26, 46, 0.9);
+    color: #a0e6ff;
+    padding: 40px 20px 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .brand {
+    flex: 1 1 300px;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    color: #00b0c8;
+    margin: 0 0 10px;
+  }
+  
+  .tagline {
+    font-style: italic;
+    opacity: 0.8;
+  }
+  
+  .nav, .social {
+    flex: 1 1 200px;
+    margin-bottom: 20px;
+  }
+  
+  .navTitle, .socialTitle {
+    color: #00b0c8;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .navList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .navLink {
+    color: #a0e6ff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+  }
+  
+  .navLink:hover {
+    color: #00b0c8;
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .socialIcon {
+    color: #a0e6ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .socialIcon:hover {
+    color: #00b0c8;
+  }
+  
+  .bottom {
+    border-top: 1px solid rgba(160, 230, 255, 0.1);
+    margin-top: 20px;
+    padding-top: 20px;
+    text-align: center;
+  }
+  
+  .copyright {
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+    }
+  
+    .brand, .nav, .social {
+      flex-basis: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  
+    .socialIcons {
+      justify-content: center;
+    }
+  }
+  
+  
