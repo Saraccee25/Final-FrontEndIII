@@ -177,3 +177,18 @@
   }
 }
 
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nameLink {
+  text-decoration: none;
+  color: #00b0c8;
+}
+
+.nameLink:hover {
+  text-decoration: underline;
+}
+
+

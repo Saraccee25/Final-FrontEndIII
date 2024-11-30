@@ -1,25 +1,23 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom"; 
 import styles from "./CharacterCard.module.css";
 import { FavoritesContext } from "../../context/FavoritesContext"; 
 
-
 const CharacterCard = ({ character }) => {
   const { favorites, toggleFavorite } = useContext(FavoritesContext);
-  const [notification, setNotification] = useState(""); // Estado para la notificación
+  const [notification, setNotification] = useState(""); 
 
   const isFavorite = favorites.some((fav) => fav.id === character.id);
 
   const handleToggleFavorite = () => {
     toggleFavorite(character);
 
-   
     if (!isFavorite) {
       setNotification(`${character.name} added to Favorites!`);
     } else {
       setNotification(`${character.name} removed from Favorites!`);
     }
 
- 
     setTimeout(() => {
       setNotification("");
     }, 2000);
@@ -28,15 +26,22 @@ const CharacterCard = ({ character }) => {
   return (
     <div className={styles.card}>
       {notification && <div className={styles.notification}>{notification}</div>}
-      <div className={styles.imageContainer}>
-        <img src={character.image} alt={character.name} className={styles.cardImage} />
-        <div className={styles.status}>
-          <span className={`${styles.statusIndicator} ${styles[character.status.toLowerCase()]}`}></span>
-          {character.status}
+      <Link to={`/product/${character.id}`} className={styles.cardLink}>
+        <div className={styles.imageContainer}>
+          <img src={character.image} alt={character.name} className={styles.cardImage} />
+          <div className={styles.status}>
+            <span
+              className={`${styles.statusIndicator} ${styles[character.status.toLowerCase()]}`}
+            ></span>
+            {character.status}
+          </div>
         </div>
-      </div>
+      </Link>
+
       <div className={styles.cardContent}>
-        <h3 className={styles.name}>{character.name}</h3>
+        <Link to={`/product/${character.id}`} className={styles.nameLink}>
+          <h3 className={styles.name}>{character.name}</h3>
+        </Link>
         <p className={styles.gender}>Gender: {character.gender}</p>
         <p className={styles.species}>Species: {character.species}</p>
         <button
