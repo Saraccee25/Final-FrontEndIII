@@ -95,23 +95,35 @@
 }
 
 .favoriteButton {
-  background-color: #00b0c8;
-  color: white;
-  padding: 10px 20px;
+  background: none;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  font-family: "Poppins", sans-serif;
-  transition: background-color 0.3s ease;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  transition: transform 0.2s ease;
 }
 
 .favoriteButton:hover {
-  background-color: #007b8f;
+  transform: scale(1.2);
 }
 
 .favoriteButton:focus {
   outline: none;
 }
+
+.heartIcon {
+  width: 24px;
+  height: 24px;
+  transition: fill 0.3s ease;
+}
+
+.favorite .heartIcon {
+  fill: red; 
+}
+
 
 
 
@@ -133,3 +145,35 @@
     box-shadow: 0 0 5px rgba(0, 176, 200, 0.5);
   }
 }
+
+.notification {
+  position: absolute;
+  top: 20px;  
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 176, 200, 0.9);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0, 176, 200, 0.2);
+  animation: fadeInOut 2s ease;
+  font-family: "Poppins", sans-serif;
+  z-index: 10;  
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
