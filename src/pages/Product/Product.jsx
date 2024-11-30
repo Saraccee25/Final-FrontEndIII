@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAllCharacters } from "../../service/rickAndMortyApi";
-import CharacterCard from "../../components/CharacterCard/CharacterCard"; 
+import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import styles from "./Product.module.css";
 
 const Product = () => {
@@ -12,7 +12,7 @@ const Product = () => {
     const fetchProducts = async () => {
       try {
         const data = await getAllCharacters();
-        setProducts(data.results); 
+        setProducts(data.results);
         setLoading(false);
       } catch (err) {
         setError("Failed to load products");
@@ -28,10 +28,15 @@ const Product = () => {
 
   return (
     <div className={styles.productList}>
-      {products.map((product) => (
-        <CharacterCard 
-          key={product.id} 
-          character={product} 
+      {products.map(({ id, name, status, gender, species, image }) => (
+        <CharacterCard
+          key={id}
+          id={id}
+          name={name}
+          status={status}
+          gender={gender}
+          species={species}
+          image={image}
         />
       ))}
     </div>

@@ -1,21 +1,21 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import styles from "./CharacterCard.module.css";
-import { FavoritesContext } from "../../context/FavoritesContext"; 
+import { FavoritesContext } from "../../context/FavoritesContext";
 
-const CharacterCard = ({ character }) => {
+const CharacterCard = ({ id, name, status, gender, species, image }) => {
   const { favorites, toggleFavorite } = useContext(FavoritesContext);
-  const [notification, setNotification] = useState(""); 
+  const [notification, setNotification] = useState("");
 
-  const isFavorite = favorites.some((fav) => fav.id === character.id);
+  const isFavorite = favorites.some((fav) => fav.id === id);
 
   const handleToggleFavorite = () => {
-    toggleFavorite(character);
+    toggleFavorite({ id, name, status, gender, species, image });
 
     if (!isFavorite) {
-      setNotification(`${character.name} added to Favorites!`);
+      setNotification(`${name} added to Favorites!`);
     } else {
-      setNotification(`${character.name} removed from Favorites!`);
+      setNotification(`${name} removed from Favorites!`);
     }
 
     setTimeout(() => {
@@ -26,24 +26,24 @@ const CharacterCard = ({ character }) => {
   return (
     <div className={styles.card}>
       {notification && <div className={styles.notification}>{notification}</div>}
-      <Link to={`/product/${character.id}`} className={styles.cardLink}>
+      <Link to={`/product/${id}`} className={styles.cardLink}>
         <div className={styles.imageContainer}>
-          <img src={character.image} alt={character.name} className={styles.cardImage} />
+          <img src={image} alt={name} className={styles.cardImage} />
           <div className={styles.status}>
             <span
-              className={`${styles.statusIndicator} ${styles[character.status.toLowerCase()]}`}
+              className={`${styles.statusIndicator} ${styles[status.toLowerCase()]}`}
             ></span>
-            {character.status}
+            {status}
           </div>
         </div>
       </Link>
 
       <div className={styles.cardContent}>
-        <Link to={`/product/${character.id}`} className={styles.nameLink}>
-          <h3 className={styles.name}>{character.name}</h3>
+        <Link to={`/product/${id}`} className={styles.nameLink}>
+          <h3 className={styles.name}>{name}</h3>
         </Link>
-        <p className={styles.gender}>Gender: {character.gender}</p>
-        <p className={styles.species}>Species: {character.species}</p>
+        <p className={styles.gender}>Gender: {gender}</p>
+        <p className={styles.species}>Species: {species}</p>
         <button
           className={`${styles.favoriteButton} ${isFavorite ? styles.favorite : ""}`}
           onClick={handleToggleFavorite}
