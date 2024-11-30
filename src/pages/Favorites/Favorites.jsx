@@ -13,15 +13,15 @@ const Favorites = () => {
         {favorites.length === 0 ? (
           <p>No favorites yet!</p>
         ) : (
-          favorites.map((character) => (
+          favorites.map(({ id, name, status, gender, species, image }) => (
             <CharacterCard
-              key={character.id}
-              name={character.name}
-              image={character.image}
-              status={character.status}
-              species={character.species}
-              gender={character.gender}
-              character={character}
+              key={id}
+              id={id}
+              name={name}
+              status={status}
+              gender={gender}
+              species={species}
+              image={image}
             />
           ))
         )}
