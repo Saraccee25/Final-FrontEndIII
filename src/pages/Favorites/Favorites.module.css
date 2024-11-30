@@ -1,13 +1,15 @@
 .favoritesList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    justify-content: center;
-  }
-  
-  .favoritesList p {
-    color: #aaa;
-    font-size: 1.2rem;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px; 
+  padding: 20px;
+  margin: 40px 10px;
+  justify-content: center;
+  background: linear-gradient(135deg, #2c3e50, #34495e, #8e44ad); 
+  border-radius: 10px; 
+}
+
+.favoritesList p {
+  color: #aaa;
+  font-size: 1.2rem;
+}
