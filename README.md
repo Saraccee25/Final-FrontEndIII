@@ -25,7 +25,7 @@ Sigue estos pasos para clonar y ejecutar el proyecto localmente:
 
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/rick-and-morty-app.git
+   git clone https://github.com/Saraccee25/Final-FrontEndIII.git
 2. Navega al directorio del proyecto:
    ```bash
    cd rick-and-morty-app
